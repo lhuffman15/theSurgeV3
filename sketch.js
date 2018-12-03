@@ -60,7 +60,7 @@ function preload(){
 	section9 = loadImage('assets/finalBattleTwoNoText.png');
 	section10 = loadImage('assets/finalBattleThreeNoText.png');
 	section11 = loadImage('assets/gameVictory.png');
-	section12 = loadImage('assets/sec12.jpg');
+	section12 = loadImage('assets/gameOver.png');
 	playFont = loadFont('assets/PressStart2p-Regular.ttf');
 	fail0 = loadImage('assets/lifefull.png');
 	fail1 = loadImage('assets/life2.png');
@@ -235,12 +235,15 @@ if (sectionNum == 8 && shield == true) {
 } else if (sectionNum == 8 && speaker == true) {
 	change = "fail 3";
 	speaker = false;
+		c3Fail = 1;
 } else if (sectionNum == 8 && net == true) {
 	change = "fail 3";
 	net = false;
+		c3Fail = 1;
 } else if (sectionNum == 8 && chicken == true) {
 	change = "fail 3";
 	chicken = false;
+		c3Fail = 1;
 }
 
 if (change === "success3") {
@@ -250,6 +253,10 @@ if (change === "success3") {
 if (change === "fail 3") {
 	sectionNum = 9;
 	c3Fail = 1;
+}
+
+if (change === "fail 3" && failSum >= 3) {
+	sectionNum = 12;
 }
 
 //challenge 3 attack 2
@@ -264,12 +271,15 @@ if (sectionNum == 9 && net == true) {
 } else if (sectionNum == 9 && speaker == true) {
 	change = "fail 4";
 	speaker = false;
+		c4Fail = 1;
 } else if (sectionNum == 9 && shield == true) {
 	change = "fail 4";
 	shield = false;
+		c4Fail = 1;
 } else if (sectionNum == 9 && chicken == true) {
 	change = "fail 4";
 	chicken = false;
+		c4Fail = 1;
 }
 
 if (change === "success4") {
@@ -278,7 +288,10 @@ if (change === "success4") {
 
 if (change === "fail 4") {
 	sectionNum = 10;
-	c4Fail = 1;
+}
+
+if (change === "fail 4" && failSum >= 3) {
+	sectionNum = 12;
 }
 
 //challenge 3 attack 3
@@ -293,12 +306,15 @@ if (sectionNum == 10 && chicken == true) {
 } else if (sectionNum == 10 && speaker == true) {
 	change = "fail 5";
 	speaker = false;
+	c5Fail = 1;
 } else if (sectionNum == 10 && shield == true) {
 	change = "fail 5";
 	shield = false;
+	c5Fail = 1;
 } else if (sectionNum == 10 && net == true) {
 	change = "fail 5";
 	net = false;
+	c5Fail = 1;
 }
 
 if (change === "success5") {
@@ -306,10 +322,10 @@ if (change === "success5") {
 }
 
 if (change === "fail 5") {
-		c5Fail = 1;
+
 }
 
-if (c5Fail === 1 && failSum <= 3) {
+if (c5Fail === 1 && failSum < 3) {
 		sectionNum = 11;
 }
 

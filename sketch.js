@@ -45,7 +45,7 @@ var fh = 70;
 var challenge = 0;
 var pad = 60;
 var textFill = 255;
-// var playFont;
+var playFont;
 
 function preload(){
 	section0 = loadImage('assets/intro.png');
@@ -61,7 +61,7 @@ function preload(){
 	section10 = loadImage('assets/finalBattleThreeNoText.png');
 	section11 = loadImage('assets/gameVictory.png');
 	section12 = loadImage('assets/sec12.jpg');
-// 	playFont = loadFont('assets/PressStart2p-Regular.ttf');
+	playFont = loadFont('assets/PressStart2p-Regular.ttf');
 	fail0 = loadImage('assets/lifefull.png');
 	fail1 = loadImage('assets/life2.png');
 	fail2 = loadImage('assets/life1.png');
